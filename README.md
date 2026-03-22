@@ -1,4 +1,4 @@
-<h1 align="center"> Autonomous Mini Car 🏎️🤖 </h1>
+<h1 align="center"> Autonomous Mini Car </h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/PlatformIO-ESP32-blue" />
@@ -12,7 +12,7 @@ The project is **still in active development**, with ongoing work on mechanics, 
 
 ---
 
-## 📐 Enclosure Model
+## Enclosure Model
 
 <p align="center">
   <img src="docs/gif/rotateFront.gif" alt="3D render – front rotation">
@@ -21,7 +21,7 @@ The project is **still in active development**, with ongoing work on mechanics, 
 
 ---
 
-## 🛠️ Final Product
+## Final Product
 
 <p align="center">
 <table>
@@ -52,50 +52,50 @@ The project is **still in active development**, with ongoing work on mechanics, 
 
 ---
 
-## ✨ Features
+## Features
 
-- 🧠 **Wi-Fi controlled ESP32** — onboard HTTP server exposes simple navigation controls (forward, back, left, right, stop).
-- 🛞 **Dual-motor drive system** — tank-style differential steering using L298N motor drivers.
-- 👁️ **Person-following mode** — Python + OpenCV script processes ESP32-CAM video and sends movement commands to the vehicle.
-- 📷 **Camera-based control** — ESP32-CAM handles live video streaming.
-- 📡 **Multiple onboard sensors** — ToF distance, ultrasonic, environmental sensing and more.
-- 🔊 **Audio output system** — I2S amplifier + speaker.
-- 🧩 **Custom 3D-printed F1-inspired chassis** — STL files included for printing.
-- 🚧 **Work in progress** — new sensors, AI logic and mechanical improvements are continuously added.
+- **Wi-Fi controlled ESP32** - onboard HTTP server exposes simple navigation controls (forward, back, left, right, stop).
+- **Dual-motor drive system** - tank-style differential steering using L298N motor drivers.
+- **Person-following mode** - Python + OpenCV script processes ESP32-CAM video and sends movement commands to the vehicle.
+- **Camera-based control** - ESP32-CAM handles live video streaming.
+- **Multiple onboard sensors** - ToF distance, ultrasonic, environmental sensing and more.
+- **Audio output system** - I2S amplifier + speaker.
+- **Custom 3D-printed F1-inspired chassis** - STL files included for printing.
+- **Work in progress** - new sensors, AI logic and mechanical improvements are continuously added.
 
 ---
 
-## 🧩 How It Works (Architecture Overview)
+## How It Works (Architecture Overview)
 
 The system is composed of three cooperating modules:
 
-### 1. 🚗 **ESP32 Motor Controller**
+### 1. **ESP32 Motor Controller**
 - Hosts a lightweight HTTP server.
 - Receives movement commands (`/forward`, `/left`, `/stop`, etc.).
 - Controls both L298N motor drivers.
 - Reads sensor data in future updates (ToF, HC-SR04, etc.).
 
-### 2. 🎥 **ESP32-CAM Video Module**
+### 2. **ESP32-CAM Video Module**
 - Streams MJPEG video over Wi-Fi.
 - Provides the visual input for person tracking.
 - Can store images or sensor logs on the SD card.
 
-### 3. 🧠 **Python Vision System**
+### 3. **Python Vision System**
 - Processes the video stream using OpenCV DNN.
 - Detects a person and calculates steering decisions.
 - Sends commands back to the ESP32 motor controller.
 - Acts as the “brain” of the autonomous mode.
 
-### 🔗 Communication Flow
+### Communication Flow
 ```
 ESP32-CAM → Python Vision Script → ESP32 Motor Controller → Motors
 ```
 
 ---
 
-## ⚙️ Hardware Overview
+## Hardware Overview
 
-### 🔧 Core Components
+### Core Components
 - **MCUs:**  
   - 2× ESP32 DevKit (motor control + main logic)  
   - 1× ESP32-CAM (video streaming + detection)
@@ -128,7 +128,7 @@ ESP32-CAM → Python Vision Script → ESP32 Motor Controller → Motors
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 
 ```
@@ -152,7 +152,7 @@ AutonomousMiniCar/
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ### 1. Firmware (ESP32 Motor Controller)
 1. Open `firmware/` in PlatformIO.
@@ -178,7 +178,7 @@ python person_follow.py
 
 ---
 
-## 🔌 Motor Control
+## Motor Control
 
 ```cpp
 #define IN1 18  // left motor forward
@@ -189,33 +189,33 @@ python person_follow.py
 
 ---
 
-## 🧠 What I Learned
+## What I Learned
 
 Working on this project taught me a wide range of practical skills across electronics, embedded systems, 3D design and computer vision:
 
-### 🔌 Embedded Systems & Microcontrollers
+### Embedded Systems & Microcontrollers
 - Configuring multiple ESP32 boards for different roles (motor control, video streaming, sensor data).
 - Implementing an HTTP server on ESP32 for real-time remote control.
 - Managing GPIO pins, PWM output, and motor direction logic.
 - Integrating modular drivers such as L298N, I2S audio modules and SD card readers.
 
-### ⚙️ Electronics & Power Management
+### Electronics & Power Management
 - Designing a multi-module power system with step-down converters, BMS and 4× 18650 Li-Ion cells.
 - Ensuring stable voltage regulation for motors, logic circuits and sensors.
 - Understanding current draw, heat dissipation, and safe Li-ion usage.
 - Building full wiring architecture including indicators, OLED displays, LEDs, switches and sensors.
 
-### 🤖 Computer Vision & Python
+### Computer Vision & Python
 - Streaming and decoding MJPEG video from ESP32-CAM.
 - Using OpenCV (DNN) to detect and track a person in real time.
 - Translating bounding box position into movement commands.
 - Managing communication between Python and ESP32 using HTTP endpoints.
 
-### 📐 3D Modeling & Mechanical Design
+### 3D Modeling & Mechanical Design
 - Designing and iterating a 3D-printed chassis.
 - Making mechanically stable mounts for electronics, motors and battery systems.
 
-### 🧪 System Architecture & Prototyping
+### System Architecture & Prototyping
 - Building a multi-component system where firmware, sensors and vision logic communicate together.
 - Debugging wireless delays, signal noise, motor control issues and real-world mechanical limitations.
 - Structuring a scalable repository with separate firmware, hardware and computer vision modules.
@@ -223,6 +223,6 @@ Working on this project taught me a wide range of practical skills across electr
 ---
 
 
-## 📜 License
+## License
 
-This project is licensed under the MIT License — feel free to use, modify, or experiment with it.
+This project is licensed under the MIT License - feel free to use, modify, or experiment with it.
